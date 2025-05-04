@@ -1,0 +1,55 @@
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-option.active {
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.grid-container {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(21, 30px);
+    grid-template-rows: repeat(12, 30px);
+    gap: 1px;
+    background-color: #555;
+    padding: 1px;
+}
+
+.tile {
+    background-color: #ddd;
+    border: 1px solid #999;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.tile:hover {
+    background-color: #ccc;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
