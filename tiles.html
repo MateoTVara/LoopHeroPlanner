@@ -4,14 +4,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="menu-bar">
-        <div class="color-option" style="background: #2196F3" data-color="#2196F3"></div>
-        <div class="color-option" style="background: #4CAF50" data-color="#4CAF50"></div>
-        <div class="color-option" style="background: #f44336" data-color="#f44336"></div>
-        <div class="color-option" style="background: #FFEB3B" data-color="#FFEB3B"></div>
-    </div>
+    <div class="container">
+        <div class="quick-menu">
+            <!-- Quick color options will be populated here -->
+        </div>
 
-    <div id="grid-container" class="grid-container"></div>
+        <div class="menu-trigger" onclick="toggleMenu()">
+            Press [ESC] or click here to open menu
+        </div>
+
+        <div class="tiles-container">
+            <div class="grid-container" id="grid-container"></div>
+        </div>
+
+        <div class="blank-area"></div>
+
+        <div class="overlay-menu" id="overlayMenu">
+            <div class="menu-content">
+            <h2>Color Selection</h2>
+            <div id="colorSettings">
+                <!-- will be populated by JS -->
+            </div>
+            <button style="margin-top:20px" onclick="toggleMenu()">Close</button>
+            </div>
+        </div>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
