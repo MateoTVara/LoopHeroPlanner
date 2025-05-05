@@ -1,10 +1,5 @@
 // 1) Define your fixed set of image options and whether each is visible
 //    (add more entries here as you add more files to /imgs)
-const imageOptions = {
-    'imgs/Landscape/Forest.webp':    { visible: true, description: 'Forest'    },
-    'imgs/Landscape/Rock.webp':      { visible: true, description: 'Rock'      },
-    'imgs/Landscape/Mountain.webp':  { visible: true, description: 'Mountain'  },
-  };
   
   let selectedImage = Object.keys(imageOptions)[0];  // start with the first key
   
@@ -15,7 +10,9 @@ const imageOptions = {
     tile.className = 'tile';
     tile.addEventListener('click', () => {
       tile.style.backgroundImage = `url(${selectedImage})`;
-      tile.style.backgroundSize  = 'cover';
+      tile.style.backgroundSize = '100% 100%'; // <-- Ensures full tile coverage
+      tile.style.backgroundPosition = 'center';
+      tile.style.backgroundRepeat = 'no-repeat';
     });
     container.appendChild(tile);
   }
