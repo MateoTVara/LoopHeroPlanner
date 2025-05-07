@@ -1,7 +1,16 @@
+// script.js
+
 // 1) Define your fixed set of image options and whether each is visible
 //    (add more entries here as you add more files to /imgs)
-  
-  let selectedImage = Object.keys(imageOptions)[0];  // start with the first key
+
+let selectedImage = Object.keys(imageOptions)[0];
+
+Object.keys(imageOptions).forEach(path => {
+  const img = new Image();
+  img.onload = () => console.log(`✅ Imagen cargada correctamente: ${path}`);
+  img.onerror = () => console.error(`❌ Error al cargar la imagen: ${path}`);
+  img.src = path;
+});  // start with the first key
   
   // 2) Build the tile grid
   const container = document.getElementById('grid-container');

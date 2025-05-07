@@ -1,10 +1,18 @@
+/* styles.css */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: stretch;
-    background: #555; /* Grid line color */
+    background: #000000; /* Grid line color */
 }
 
 .container {
@@ -12,7 +20,7 @@ body {
     max-width: 1200px;
     height: 100%;
     display: grid;
-    grid-template-columns: 3.7fr 1fr;     /* left wider */
+    grid-template-columns: minmax(0, 3.7fr) 1fr; /* left wider */
     grid-template-rows: 1fr 4fr;
     grid-template-areas:
       "quick-menu menu-trigger"
@@ -25,16 +33,31 @@ body {
     background: #363636;
     padding: 10px;
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap; 
     align-items: center;
     gap: 10px;
+    overflow-x: auto; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.quick-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.image-option img {
+    width: 57px;   /* Smaller than default */
+    height: 57px;
+    object-fit: contain;
+    border-radius: 4px; /* Optional: for rounded corners */
 }
 
 .menu-trigger {
     grid-area: menu-trigger;
     background: #fff;
     display: flex;
+    text-align: justify;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -71,14 +94,11 @@ body {
     background-color: #ffffff;
     cursor: pointer;
     transition: background-color 0.1s;
+    box-sizing: border-box;
 }
 
-.color-option {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #333;
-    cursor: pointer;
-    transition: all 0.2s;
+.tile:nth-child(21n) {
+    border-right: 1px solid #000000;
 }
 
 .overlay-menu {
@@ -94,15 +114,17 @@ body {
     padding: 40px 20px;
     overflow-y: auto;
     color: #333;
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #imageSettings {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(15, auto);
+    grid-auto-flow: column;
     justify-content: center;
+    color:#ffffff;
     gap: 10px;
 }
 
@@ -114,4 +136,10 @@ body {
     max-width: 600px;
     margin: 40px auto;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#h2-selection {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: underline;
 }

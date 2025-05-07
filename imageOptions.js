@@ -1,3 +1,7 @@
+// imageOptions.js
+
+
+
 const imageOptions = {
   //Golden Cards
   "imgs/Golden/AncestralCrypt.webp": {
