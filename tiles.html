@@ -5,26 +5,29 @@
 </head>
 <body>
     <div class="container">
-        <div class="quick-menu">
-            <!-- Quick color options will be populated here -->
-        </div>
 
-        <div class="menu-trigger" onclick="toggleMenu()">
-            Press [ESC] or click<br>
-            here to open menu
-        </div>
-
-        <div class="tiles-container">
-            <div class="grid-container" id="grid-container"></div>
-        </div>
-
-        <div class="blank-area"></div>
-
-        <div class="overlay-menu" id="overlayMenu">
-            <h2 id="h2-selection">Selection</h2>
-            <div id="imageSettings"></div>
-          </div>
+    <div class="quick-menu">
+        <div class="quick-menu-arrow left" id="quickMenuArrowLeft">&#9664;</div>
+        <div class="quick-menu-inner"></div>
+        <div class="quick-menu-arrow right" id="quickMenuArrowRight">&#9654;</div>
     </div>
+
+    <div class="menu-trigger" onclick="toggleMenu()">
+        Press [ESC] or click<br>
+        here to open menu
+    </div>
+
+    <div class="tiles-container">
+        <div class="grid-container" id="grid-container"></div>
+    </div>
+
+    <div class="blank-area"></div>
+
+    <div class="overlay-menu" id="overlayMenu">
+        <h2 id="h2-selection">Selection</h2>
+        <div id="imageSettings"></div>
+    </div>
+</div>
     
     <script src="imageOptions.js"></script>
     <script src="script.js"></script>
